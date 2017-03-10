@@ -29,7 +29,7 @@ class GalleryPhoto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gallery_id'], 'integer'],
+            [['gallery_id'],['main'], 'integer'],
             [['name'], 'string', 'max' => 250],
             [['files'], 'file', 'maxFiles' => 100, 'extensions' => 'png, jpg'],
         ];
@@ -44,6 +44,7 @@ class GalleryPhoto extends \yii\db\ActiveRecord
             'photo_id' => 'ID',
             'gallery_id' => 'Gallery_ID',
             'name' => 'Name',
+	    'main' => 'Main',
         ];
     }
 

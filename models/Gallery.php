@@ -51,6 +51,6 @@ class Gallery extends ActiveRecord
     }
     public function getGalleryPhotos()
     {
-        return $this->hasMany(GalleryPhoto::className(), ['gallery_id' => 'gallery_id'])->limit(4);
+        return $this->hasMany(GalleryPhoto::className(), ['gallery_id' => 'gallery_id'])->orderBy(['main' => SORT_DESC])->limit(4);
     }
 }
